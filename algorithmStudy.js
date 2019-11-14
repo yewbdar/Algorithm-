@@ -53,7 +53,7 @@ console.log('new Fib Memo',fibMimo(12))
   return 0;
 }
 
-console.log(createCheckDigit("55555"));
+// console.log(createCheckDigit("55555"));
 
 var foo=function(){
   console.log(foo)
@@ -68,9 +68,9 @@ function aaa(){
   }
   
 }
-console.log(typeof aaa())
+// console.log(typeof aaa())
 
-console.log(String('hello')==='hello')
+// console.log(String('hello')==='hello')
 
 var x = 0;
 function foo() {
@@ -79,9 +79,9 @@ function foo() {
     return foo;
 }
 var bar = new  foo;
-console.log(bar.x);
+// console.log(bar.x);
 
-console.log('hello' instanceof String)
+// console.log('hello' instanceof String)
 
 var bar = 1,
     foo = {};
@@ -449,7 +449,7 @@ var x = function (a, b) {
   });
   return c;
 };
-console.log('hihih',x(1,3));
+// console.log('hihih',x(1,3));
 
 function maxCommenDidser(a,b){
   var max =0
@@ -510,4 +510,20 @@ function getDiffernt(arr,val){
   })
   return res
 }
-console.log(getDiffernt([4, 7, 2 , -3, 2],5))
+// console.log(getDiffernt([4, 7, 2 , -3, 2],5))
+
+function findSingleNum(arr){
+  let obj={}
+  arr.forEach(ele =>{
+       if(obj[ele]){
+         obj[ele]++
+       }else{
+        obj[ele]=1
+       }
+  })
+  let newArr=arr.filter(ele=>{
+             return obj[ele] == 1
+  })
+return newArr
+}
+console.log(findSingleNum([4, 3, 2, 4, 1, 3, 2]))
