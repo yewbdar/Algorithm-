@@ -526,4 +526,32 @@ function findSingleNum(arr){
   })
 return newArr
 }
-console.log(findSingleNum([4, 3, 2, 4, 1, 3, 2]))
+// console.log(findSingleNum([4, 3, 2, 4, 1, 3, 2]))
+
+class MaxStuck{
+  constructor(){
+    this.arr=[]
+  } 
+  push(val){
+    this.arr.push(val)
+  }
+  pop(){
+    this.arr.length < 1 ?  'None': this.arr.pop()
+  }
+  max(){
+    if(this.arr.length < 1){
+    return 'None'
+    }else{
+      return Math.max(...this.arr)
+    }
+    
+  }
+}
+
+let s = new MaxStuck();
+s.push(2)
+s.push(1)
+s.push(3)
+s.push(2)
+s.pop()
+console.log(s.max())
