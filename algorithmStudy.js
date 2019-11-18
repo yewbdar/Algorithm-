@@ -569,4 +569,36 @@ function bubbleSort(arr){
   }
   return arr
 }
-console.log(bubbleSort([2,4,1,5,6,9,8]))
+let arrShift=[2,4,1,5,6,9,8]
+console.log(arrShift.shift())
+
+// ######################################### MERGE SORT ###################################################
+function mergeSort(arr){
+  if(arr.length < 2) return arr
+  let midPoin=Math.floor(arr.length/2);
+  let firstHalf=arr.slice(0,midPoin);
+  let secondHalf=arr.slice(midPoin);
+  return merge(mergeSort(firstHalf),mergeSort(secondHalf))
+}
+function merge(arr1,arr2){
+  let arr3=[];
+  while(arr1.length && arr2.length){
+    let minOne
+    if(arr1[0] < arr2[0]){
+        minOne = arr1.shift()
+    }else{
+      minOne=arr2.shift()
+    }
+    arr3.push(minOne);
+  }
+  if(arr1.length){
+    arr3=arr3.concat(arr1)
+  }
+  if(arr2.length){
+    arr3=arr3.concat(arr2)
+  }
+  return arr3
+}
+
+// console.log(mergeSort([100,2,4,6,8,9,1,3,4,7]))
+// #############################################################################################################
